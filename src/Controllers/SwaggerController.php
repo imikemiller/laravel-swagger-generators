@@ -10,6 +10,7 @@ namespace Imm\Controllers;
 
 
 use Illuminate\Http\Response;
+use Laravel\Lumen\Routing\Controller;
 
 class SwaggerController extends Controller
 {
