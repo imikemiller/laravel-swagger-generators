@@ -16,9 +16,9 @@ class SwaggerController extends Controller
 {
     public function index()
     {
-        $filePath = swagger_path(config('swagger.save_path'),config('swagger.file_name'));
+        $filePath = base_path(swagger_path(config('swagger.save_path'),config('swagger.file_name')));
         if (! file_exists($filePath)) {
-            abort(404, 'Cannot find '.$filePath);
+            return new Response('Unable to find Swagger doc file.', 404);
         }
         $content = file_get_contents($filePath);
         return new Response($content, 200, ['Content-Type' => 'application/json']);
