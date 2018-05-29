@@ -33,12 +33,5 @@
         "files": [
             "src/helpers.php"
         ]
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Imm\\Providers\\SwaggerGeneratorServiceProvider"
-            ]
-        }
     }
 }
