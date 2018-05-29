@@ -9,6 +9,8 @@
 namespace Imm\Controllers;
 
 
+use Illuminate\Http\Response;
+
 class SwaggerController extends Controller
 {
     public function index()
@@ -17,7 +19,7 @@ class SwaggerController extends Controller
         if (! file_exists($filePath)) {
             abort(404, 'Cannot find '.$filePath);
         }
-        $content = File::get($filePath);
+        $content = file_get_contents($filePath);
         return new Response($content, 200, ['Content-Type' => 'application/json']);
     }
 }

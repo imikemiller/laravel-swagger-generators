@@ -25,13 +25,11 @@ class SwaggerGeneratorServiceProvider extends ServiceProvider
             __DIR__.'/../config/swagger.php' => config_path('swagger.php'),
         ],'swagger');
 
-        $this->app->router->group(['namespace' => 'swagger'], function ($route) {
-            $route->get(config('swagger.route'), [
+        $this->app->router->get(config('swagger.route'), [
                 'as' => 'swagger.docs',
                 'middleware' => config('swagger.middleware', []),
-                'uses' => SwaggerController::class,
+                'uses' => SwaggerController::class.'@index',
             ]);
-        });
 
         if ($this->app->runningInConsole()) {
 
