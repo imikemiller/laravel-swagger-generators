@@ -1,0 +1,44 @@
+{
+    "name": "imikemiller/laravel-swagger-generators",
+    "description": "Provides a Lumen friendly artisan command to generate the Swagger JSON doc and a default web route.",
+    "keywords": [
+        "swagger",
+        "php",
+        "laravel",
+        "lumen"
+    ],
+    "type": "package",
+    "require": {
+        "zircote/swagger-php": "dev-master",
+        "doctrine/annotations": "~1.7",
+        "laravel/lumen-framework": "^5.6@dev"
+    },
+    "require-dev":{
+        "psy/psysh": "dev-master",
+        "phpunit/phpunit": "^7.2@dev",
+        "mockery/mockery": "^1.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike Miller",
+            "email": "mike@mikemiller.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Imm\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Imm\\Providers\\SwaggerGeneratorServiceProvider"
+            ]
+        }
+    }
+}
