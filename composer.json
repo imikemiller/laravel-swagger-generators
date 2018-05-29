@@ -1,5 +1,5 @@
 {
-    "name": "imikemiller/laravel-swagger-generators",
+    "name": "imikemiller/lumen-swagger-generators",
     "description": "Provides a Lumen friendly artisan command to generate the Swagger JSON doc and a default web route.",
     "keywords": [
         "swagger",
